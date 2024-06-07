@@ -7,8 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using WebBanHang.Models;
+using WbeBanHang.Models;
 
 namespace WebBanHang.Controllers
 {
@@ -22,10 +21,10 @@ namespace WebBanHang.Controllers
             _hosting = hosting;
         }
         //Hiển thị danh sách sản phẩm
-        public IActionResult Index(int ?page)
+        public IActionResult Index(int? page)
         {
             //phân trang
-            var pageIndex = (int) (page !=null ? page : 1);
+            var pageIndex = (int)(page != null ? page : 1);
             var pageSize = 5;
 
             var productList = _db.Products.Include(x => x.Category).ToList();
@@ -36,7 +35,7 @@ namespace WebBanHang.Controllers
             ViewBag.pageSum = pageSum;
             ViewBag.pageIndex = pageIndex;
 
-            return View(productList.Skip((pageIndex-1)*pageSize).Take(pageSize).ToList());
+            return View(productList.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList());
         }
         //Hiển thị form thêm sản phẩm
         public IActionResult Add()
