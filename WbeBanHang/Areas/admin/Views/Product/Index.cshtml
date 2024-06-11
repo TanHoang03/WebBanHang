@@ -10,6 +10,17 @@
         </a>
     </div>
 </div>
+<br />
+<div class="row">
+    <div class="col-md-12-center">
+        <form asp-action="Index"  method="post">
+            <div class="form-inline">
+                Search<input name="testsearch" class="form-control ml-3">
+                <button type="submit" class="btn btn-secondary" >Tra cứu</button>
+            </div>
+        </form>
+    </div>
+</div>
 <table class=" table table-hover">
     <thead>
         <tr>
@@ -30,7 +41,7 @@
                 <td>
                     @if (x.ImageUrl != null)
                     {
-                        <img src="@x.ImageUrl" style="width:100px" />
+                        <img src="/@x.ImageUrl" style="width:100px" />
                     }
                 </td>
                 <td>
