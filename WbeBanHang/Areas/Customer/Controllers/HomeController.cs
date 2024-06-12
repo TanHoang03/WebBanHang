@@ -16,7 +16,7 @@ namespace WbeBanHang.Controllers
         public HomeController(ILogger<HomeController> logger,ApplicationDbContext db)
         {
             _logger = logger;
-            _db = _db;
+            _db = db;
         }
 
         public IActionResult Index()
