@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,26 @@ namespace WbeBanHang.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int ? page)
         {
+            //phân trang
+            var pageIndex = (int)(page != null ? page : 1);
+            var pageSize = 4;
+
+            var productList = _db.Products.Include(x => x.Category).ToList();
+            //var productList = _db.Products.Include(x => x.Category).Where(p => p.Name.ToLower().Contains(textsearch.ToLower())).ToList();
+            //Thống kê số trang
+            //var pageSum = (int)Math.Ceiling((decimal)productList.Count / pageSize);
+            var pageSum = productList.Count() / pageSize + (productList.Count() % pageSize > 0 ? 1 : 0);
+            //truyền dữ liệu cho view
+            ViewBag.pageSum = pageSum;
+            ViewBag.pageIndex = pageIndex;
+
+            return View(productList.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList());
 
 
-         
-            var productlist = _db.Products.ToList();
-            return View(productlist);
+            //var productlist = _db.Products.ToList();
+            //return View(productlist);
         }
 
         public IActionResult Privacy()
