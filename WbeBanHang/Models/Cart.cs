@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using WbeBanHang.Models;
 
-namespace WebBanHang.Models
+namespace WbeBanHang.Models
 {
     //lớp biểu diễn 1 phần tử của giỏ hàng
     public class CartItem {
-
+    
         public Product Product { get; set; }
         public int Quantity { get; set; }
     }
@@ -63,7 +63,7 @@ namespace WebBanHang.Models
             }
         }
         //tính tổng thành tiền
-        public double Total {
+        public double Total { 
             get {
                 double total = _items.Sum(x =>x.Quantity * x.Product.Price);
                 return total;

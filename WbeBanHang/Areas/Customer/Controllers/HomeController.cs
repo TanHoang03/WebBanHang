@@ -24,7 +24,7 @@ namespace WbeBanHang.Controllers
         {
             //phân trang
             var pageIndex = (int)(page != null ? page : 1);
-            var pageSize = 4;
+            var pageSize = 5;
 
             var productList = _db.Products.Include(x => x.Category).ToList();
             //var productList = _db.Products.Include(x => x.Category).Where(p => p.Name.ToLower().Contains(textsearch.ToLower())).ToList();
