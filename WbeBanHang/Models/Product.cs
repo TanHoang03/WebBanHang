@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WbeBanHang.Models
 {
-    public class Product
+    public class Orders
     {
         public int Id { get; set; }
         [Required, StringLength(200)]

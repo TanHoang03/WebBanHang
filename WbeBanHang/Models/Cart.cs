@@ -9,7 +9,7 @@ namespace WbeBanHang.Models
     //lớp biểu diễn 1 phần tử của giỏ hàng
     public class CartItem {
     
-        public Product Product { get; set; }
+        public Orders Product { get; set; }
         public int Quantity { get; set; }
     }
 
@@ -25,7 +25,7 @@ namespace WbeBanHang.Models
         public List<CartItem> Items { get { return _items; } }
         //--------cac phuong thuc xu ly tren Giỏ hàng-----------
         //phuong thuc them 1 san pham vào giỏ
-        public void Add(Product p, int qty)
+        public void Add(Orders p, int qty)
         {
             var item = _items.FirstOrDefault(x => x.Product.Id ==p.Id);
             if (item == null) //chưa có

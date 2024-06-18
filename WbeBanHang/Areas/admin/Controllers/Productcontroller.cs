@@ -50,7 +50,7 @@ namespace WebBanHang.Controllers
         }
         //Xử lý thêm sản phẩm
         [HttpPost]
-        public IActionResult Add(Product product, IFormFile ImageUrl)
+        public IActionResult Add(Orders product, IFormFile ImageUrl)
         {
             if (ModelState.IsValid) //Kiểm tra hợp lệ
             {
@@ -90,7 +90,7 @@ namespace WebBanHang.Controllers
         }
         //Xử lý cập nhật sản phẩm
         [HttpPost]
-        public IActionResult Update(Product product, IFormFile ImageUrl)
+        public IActionResult Update(Orders product, IFormFile ImageUrl)
         {
             if (ModelState.IsValid) //Kiểm tra hợp lệ
             {

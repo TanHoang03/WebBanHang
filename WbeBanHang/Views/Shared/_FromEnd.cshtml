@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex"asp-action="Index"asp-controller="cart">
+                <form class="d-flex" asp-action="Index" asp-controller="cart">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
@@ -69,5 +69,6 @@
     <!-- Core theme JS-->
     <script src="shop-template/js/scripts.js"></script>
     <script src="/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
