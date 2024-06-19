@@ -38,5 +38,10 @@ namespace WbeBanHang.Models
             new Orders { Id = 11, Name = "Ipad Gen 10", Price = 750, CategoryId = 2 },
             new Orders { Id = 12, Name = "Ipad Pro 11", Price = 1250, CategoryId = 2 });
         }
+
+        internal void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

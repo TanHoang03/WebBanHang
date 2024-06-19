@@ -53,7 +53,7 @@ namespace WebBanHang.Areas.Customer.Controllers
                         Quantity = item.Quantity
                     };
                     //them OrderDetail vao CSDL
-                    _db.OrderDetails.Add(OrderDetail);
+                    _db.OrderDetails.Add(orderDetail);
                     _db.SaveChanges();
 
                 }
